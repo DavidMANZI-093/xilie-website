@@ -1,26 +1,215 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Updated color palette based on Xilie purple logo and dark developer aesthetic */
+  --background: #fafafb;
+  --foreground: #26262a;
+  --card: #fcfcfd;
+  --card-foreground: #26262a;
+  --popover: #fcfcfd;
+  --popover-foreground: #26262a;
+
+  /* Primary purple from Xilie logo */
+  --primary: #7d5bb8;
+  --primary-foreground: #fafafb;
+
+  /* Secondary colors */
+  --secondary: #f2f2f4;
+  --secondary-foreground: #3f3f45;
+  --muted: #f5f5f7;
+  --muted-foreground: #6e6e78;
+  --accent: #ececf1;
+  --accent-foreground: #3f3f45;
+
+  /* Spotify green accent */
+  --spotify: #1db954;
+  --spotify-foreground: #fafafb;
+
+  --destructive: #ef4444;
+  --destructive-foreground: #fafafb;
+  --border: #e5e5e9;
+  --input: #f2f2f4;
+  --ring: #7d5bb8;
+
+  --chart-1: #7d5bb8;
+  --chart-2: #1db954;
+  --chart-3: #c74b9d;
+  --chart-4: #4db8e8;
+  --chart-5: #d4a640;
+
+  --radius: 0.75rem;
+
+  --sidebar: #fafafb;
+  --sidebar-foreground: #26262a;
+  --sidebar-primary: #7d5bb8;
+  --sidebar-primary-foreground: #fafafb;
+  --sidebar-accent: #f2f2f4;
+  --sidebar-accent-foreground: #3f3f45;
+  --sidebar-border: #e5e5e9;
+  --sidebar-ring: #7d5bb8;
+}
+
+.dark {
+  /* Dark theme with deep blues and purples for developer aesthetic */
+  --background: #13131a;
+  --foreground: #f2f2f5;
+  --card: #181820;
+  --card-foreground: #f2f2f5;
+  --popover: #181820;
+  --popover-foreground: #f2f2f5;
+
+  /* Brighter primary for dark mode */
+  --primary: #a584dc;
+  --primary-foreground: #13131a;
+
+  --secondary: #24242e;
+  --secondary-foreground: #e3e3e8;
+  --muted: #1d1d26;
+  --muted-foreground: #939399;
+  --accent: #2b2b38;
+  --accent-foreground: #e3e3e8;
+
+  /* Spotify green for dark mode */
+  --spotify: #1ed760;
+  --spotify-foreground: #13131a;
+
+  --destructive: #f87171;
+  --destructive-foreground: #f2f2f5;
+  --border: #30303d;
+  --input: #24242e;
+  --ring: #a584dc;
+
+  --chart-1: #a584dc;
+  --chart-2: #1ed760;
+  --chart-3: #e978c4;
+  --chart-4: #6dd5ff;
+  --chart-5: #edc967;
+
+  --sidebar: #0e0e14;
+  --sidebar-foreground: #f2f2f5;
+  --sidebar-primary: #a584dc;
+  --sidebar-primary-foreground: #13131a;
+  --sidebar-accent: #1d1d26;
+  --sidebar-accent-foreground: #e3e3e8;
+  --sidebar-border: #2b2b38;
+  --sidebar-ring: #a584dc;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Added custom Spotify color */
+  --color-spotify: var(--spotify);
+  --color-spotify-foreground: var(--spotify-foreground);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* Added smooth scrolling and improved typography */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-balance;
+  }
+
+  p {
+    @apply text-pretty;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Added custom utility classes for gradients and animations */
+@utility gradient-primary {
+  background: linear-gradient(135deg, #7d5bb8, #9166c7);
+}
+
+@utility gradient-dark {
+  background: linear-gradient(135deg, #13131a, #1d1d26);
+}
+
+@utility text-gradient {
+  background: linear-gradient(135deg, #7d5bb8, #a584dc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@utility animate-fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+@utility animate-slide-up {
+  animation: slideUp 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
