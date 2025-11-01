@@ -28,13 +28,13 @@ const Header = (props: Props) => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-6">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3">
+          <Link href="/" className="flex items-center space-x-2">
             <Image
               src="/icon1.png"
               alt="Xilie"
               width={32}
               height={32}
-              className="h-8 w-8"
+              className="h-8 w-8 -mt-2 -mr-1"
             />
             <span className="text-xl font-bold text-gradient">Xilie</span>
           </Link>

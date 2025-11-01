@@ -8,7 +8,16 @@
       "method": "Direct URI handler redirect"
     },
     {
-      "icon": "https://windsurf.com/logo/windsurf-white-symbol.svg",
+      "icon": "https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/light/cursor.png",
+      "iconDark": "https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/dark/cursor.png",
+      "name": "Cursor",
+      "description": "AI-powered IDE",
+      "status": "Supported",
+      "method": "Manual code input fallback"
+    },
+    {
+      "icon": "https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/light/windsurf.png",
+      "iconDark": "https://windsurf.com/logo/windsurf-white-symbol.svg",
       "name": "Windsurf",
       "description": "AI-powered IDE",
       "status": "Supported",

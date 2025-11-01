@@ -13,13 +13,13 @@ const Footer = (props: Props) => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="space-y-4">
-            <Link href="/" className="flex items-center space-x-3">
+            <Link href="/" className="flex items-center space-x-2">
               <Image
                 src="/icon1.png"
                 alt="Xilie"
-                width={24}
-                height={24}
-                className="h-6 w-6"
+                width={28}
+                height={28}
+                className="h-7 w-7 -mt-1.5"
               />
               <span className="text-lg font-bold text-gradient">Xilie</span>
             </Link>

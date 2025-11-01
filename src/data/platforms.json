@@ -13,7 +13,8 @@
       "status": "Native Support"
     },
     {
-      "icon": "https://cdn-icons-png.flaticon.com/512/179/179309.png",
+      "icon": "https://cdn-icons-png.flaticon.com/512/2/2235.png",
+      "iconDark": "https://cdn-icons-png.flaticon.com/512/179/179309.png",
       "name": "macOS",
       "shortcuts": "Cmd+Alt+S, Cmd+Alt+R, Cmd+Alt+Space",
       "status": "Native Support"

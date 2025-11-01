@@ -1,9 +1,13 @@
+"use client";
+
 import React from "react";
 import { ides } from "@/data/ides.json";
 import { platforms } from "@/data/platforms.json";
 import { Card, CardContent } from "../ui/card";
 import { Badge } from "../ui/badge";
 import { Check } from "lucide-react";
+import { IDE, Platform } from "@/types/compatibility";
+import { ThemeAwareIcon } from "../ui/theme-aware-icon";
 
 type Props = {};
 
@@ -29,7 +33,7 @@ const CompatibilitySection = (props: Props) => {
             <h3 className="text-lg font-semibold">Supported IDEs</h3>
             {/*<div className="space-y-4">*/}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-              {ides.map((ide, index) => (
+              {(ides as IDE[]).map((ide, index) => (
                 <Card key={index}>
                   <CardContent className="px-6 py-2">
                     <div className="flex items-start justify-between">
@@ -37,8 +41,9 @@ const CompatibilitySection = (props: Props) => {
                         <div className="flex items-center space-x-2">
                           <div className="flex items-center space-x-3">
                             {ide.icon && (
-                              <img
-                                src={ide.icon}
+                              <ThemeAwareIcon
+                                icon={ide.icon}
+                                iconDark={ide.iconDark}
                                 alt={ide.name}
                                 className="w-4 h-4 rounded"
                               />
@@ -69,15 +74,16 @@ const CompatibilitySection = (props: Props) => {
             <h3 className="text-lg font-semibold">Platform Support</h3>
             {/* <div className="space-y-4"> */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-              {platforms.map((platform, index) => (
+              {(platforms as Platform[]).map((platform, index) => (
                 <Card key={index}>
                   <CardContent className="px-6 py-2">
                     <div className="space-y-1">
                       <div className="flex items-center space-x-2">
                         <div className="flex items-center space-x-3">
                           {platform.icon && (
-                            <img
-                              src={platform.icon}
+                            <ThemeAwareIcon
+                              icon={platform.icon}
+                              iconDark={platform.iconDark}
                               alt={platform.name}
                               className="w-4 h-4 rounded"
                             />
