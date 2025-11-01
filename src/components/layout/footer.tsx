@@ -127,16 +127,24 @@ const Footer = (props: Props) => {
             </div>
             <p className="text-xs text-muted-foreground">
               For beta access, email{" "}
-              <Link href="mailto:manzidavid093@gmail.com" className="text-primary hover:underline">
+              <Link
+                href="mailto:manzidavid093@gmail.com"
+                className="text-primary hover:underline"
+              >
                 manzidavid093@gmail.com
               </Link>
             </p>
           </div>
         </div>
 
-        <div className="mt-8 pt-8 border-t border-border flex flex-col sm:flex-row justify-between items-center">
-            <p className="text-xs text-muted-foreground">© {new Date().getFullYear()} Xilie. All rights reserved.</p>
-            <p className="text-xs text-muted-foreground mt-2 sm:mt-0">Built with <span className="text-primary italic">love</span> for developers.</p>
+        <div className="mt-8 pt-8 border-t border-border/40 flex flex-col sm:flex-row justify-between items-center">
+          <p className="text-xs text-muted-foreground">
+            © {new Date().getFullYear()} Xilie. All rights reserved.
+          </p>
+          <p className="text-xs text-muted-foreground mt-2 sm:mt-0">
+            Built with <span className="text-primary italic">love</span> for
+            developers.
+          </p>
         </div>
       </div>
     </footer>

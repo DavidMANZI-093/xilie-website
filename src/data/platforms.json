@@ -1,0 +1,22 @@
+{
+  "platforms": [
+    {
+      "icon": "https://cdn-icons-png.flaticon.com/512/888/888882.png",
+      "name": "Windows",
+      "shortcuts": "Ctrl+Alt+S, Ctrl+Alt+R, Ctrl+Alt+Space",
+      "status": "Native Support"
+    },
+    {
+      "icon": "https://cdn-icons-png.flaticon.com/512/15465/15465695.png",
+      "name": "Linux",
+      "shortcuts": "Ctrl+Alt+S, Ctrl+Alt+R, Ctrl+Alt+Space",
+      "status": "Native Support"
+    },
+    {
+      "icon": "https://cdn-icons-png.flaticon.com/512/179/179309.png",
+      "name": "macOS",
+      "shortcuts": "Cmd+Alt+S, Cmd+Alt+R, Cmd+Alt+Space",
+      "status": "Native Support"
+    }
+  ]
+}

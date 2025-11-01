@@ -186,6 +186,13 @@
   background-clip: text;
 }
 
+@utility bg-grid-pattern {
+  background-image:
+    linear-gradient(to right, var(--muted-foreground) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--muted-foreground) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
 @utility animate-fade-in {
   animation: fadeIn 0.6s ease-out;
 }
