@@ -8,7 +8,8 @@ export const requirements = [
     title: "Your Code Editor",
     description: "Any VS Code compatible editor",
     status: "required",
-    details: "Works with VS Code, Windsurf, Kiro, Code-OSS, VSCodium, and other variants",
+    details:
+      "Works with VS Code, Windsurf, Kiro, Code-OSS, VSCodium, and other variants",
   },
   {
     icon: BsSpotify,
@@ -22,9 +23,10 @@ export const requirements = [
     title: "Active Spotify Session",
     description: "At least one device playing",
     status: "required",
-    details: "Spotify must be open on at least one device for playback controls to work",
+    details:
+      "Spotify must be open on at least one device for playback controls to work",
   },
-]
+];
 
 export const setupSteps = [
   "Click the Xilie icon in the activity bar",
@@ -32,4 +34,4 @@ export const setupSteps = [
   "Authorize in your browser",
   "For non-VS Code IDEs: Copy the authorization code when prompted",
   "Start controlling your music!",
-]
+];
